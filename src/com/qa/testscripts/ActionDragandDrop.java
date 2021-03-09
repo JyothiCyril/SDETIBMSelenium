@@ -1,5 +1,7 @@
 package com.qa.testscripts;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ public class ActionDragandDrop {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Software\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://jqueryui.com/droppable/");
 		
@@ -25,7 +28,7 @@ public class ActionDragandDrop {
 		//act.dragAndDrop(eleToDrap, TagetEle).build().perform();
 		
 		Thread.sleep(2000);
-		//driver.close();
+		driver.close();
 	}
 
 }

@@ -23,15 +23,39 @@ public class AmazonPages {
 //		WebElement RefName;
 //	
 	
+	@FindBy(linkText="Start here.")
+	WebElement startHereLink;
+	
+	public void setstartHereLinkClick() {
+		startHereLink.click();
+	}
+	
+	
+	
+	@FindBy(id="nav-link-accountList-nav-line-1")
+	WebElement AccountList;
+	
+	public WebElement getAccountList() {
+		return AccountList;
+	}
 // SearchTextBox
 	
 	@FindBy(id="twotabsearchtextbox")
 	WebElement SearchTextBox;
 	
 	public void setSearchTextBoxInput(String input) {
+		SearchTextBox.clear();
 		SearchTextBox.sendKeys(input);
 	}
 	
+	
+	
+	@FindBy(id="nav-logo-sprites")
+	WebElement AmazonLogo;
+	
+	public WebElement getAmazonLogo() {
+		return AmazonLogo;
+	}
 	
 	
 	@FindBy(id="searchDropdownBox")
@@ -69,6 +93,19 @@ public class AmazonPages {
 	public List<WebElement> getItemNames() {
 		return ItemNames;
 		
+	}
+	
+	
+	@FindBy(linkText="Careers")
+	WebElement CareersLink;
+	
+	public WebElement getCareersLink() {
+		return CareersLink;
+	}
+	
+	
+	public void setCareersLinkClick() {
+		CareersLink.click();
 	}
 	
 	

@@ -5,12 +5,17 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import com.qa.Pages.AmazonPages;
 
 public class TC_AmazonSearchPOMDemo {
 	
-	public static void main(String[] args) {	
+	
+	@Test
+	public void SeachItem() {	
 		
 		
 		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Software\\Drivers\\chromedriver.exe");
@@ -29,6 +34,9 @@ public class TC_AmazonSearchPOMDemo {
 		boolean maginifierBtnEnabled = AmazonOR.getMaginifierBtnEnabled();
 		if(maginifierBtnEnabled) {
 			AmazonOR.setMaginifierBtnClick();
+//			
+//			WebDriverWait expWait = new WebDriverWait(driver,40);
+//			expWait.until(ExpectedConditions.titleContains("Amazon.in : Da Vinci Code"));
 			
 			boolean contains = driver.getTitle().contains("Da Vinci Code");
 			if(contains) {
